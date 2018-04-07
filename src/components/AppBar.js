@@ -1,6 +1,8 @@
-import AppBar from 'react-toolbox/lib/app_bar';
-import Navigation from 'react-toolbox/lib/navigation';
-import Link from 'react-toolbox/lib/Link';
+import React from 'react'
+
+import AppBar from 'react-toolbox/lib/app_bar/AppBar';
+import Navigation from 'react-toolbox/lib/navigation/Navigation';
+import Link from 'react-toolbox/lib/Link/Link';
 
 const GithubIcon = () => (
   <svg viewBox="0 0 284 277">
@@ -8,7 +10,7 @@ const GithubIcon = () => (
   </svg>
 );
 
-const myAppBar = () => (
+const AppBarTest = () => (
   <AppBar title='React Toolbox' leftIcon='menu' rightIcon={<GithubIcon />}>
     <Navigation type='horizontal'>
       <Link href='http://' label='Inbox' icon='inbox' />
@@ -17,4 +19,4 @@ const myAppBar = () => (
   </AppBar>
 );
 
-export default myAppBar
+export default AppBarTest
