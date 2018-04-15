@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import {Input} from 'react-toolbox'
 import {Button} from 'react-toolbox';
 import {Navigation} from 'react-toolbox';
+import { Card } from 'react-toolbox';
 
 
 
@@ -22,7 +23,9 @@ class Login extends Component {
         
 
         return (
-            <div style={{maxWidth: 300, margin: 'auto', verticalAlign: 'middle'}}>
+            <div style={{ flex: 1, padding: '4rem' }}>
+            <div style={{maxWidth: 300, margin: 'auto'}}>
+            <Card style={{width: '300px'}}>
                 <Input type='text' label='Name' name='name' 
                     value={this.state.name} 
                     onChange={this.handleNameChange.bind(this, 'name')}
@@ -33,13 +36,14 @@ class Login extends Component {
                 />
                 <Navigation type='horizontal'>
                     {/* <Link to="/app"> */}
-                    <Link to="/app"><Button label = "Login"  raised primary/></Link>
+                    <Link to="/home"><Button label = "Login"  raised primary/></Link>
                     {/* </Link> */}
                     {/* <Link to="/register"> */}
                     <Link to="/register"><Button label = "Register"  raised primary/></Link>
                     {/* </Link> */}
                 </Navigation>
-
+            </Card>
+            </div>
             </div>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {Input} from 'react-toolbox'
 import {Button} from 'react-toolbox';
+import { Card } from 'react-toolbox';  
 
 import { Link } from 'react-router-dom'
 
@@ -20,7 +21,9 @@ class Login extends Component {
 
     render() {
         return (
-            <div style={{maxWidth: 300, margin: 'auto', verticalAlign: 'middle'}}>
+            <div style={{ flex: 1, padding: '4rem' }}>
+            <div style={{maxWidth: 300, margin: 'auto', }}>
+            <Card style={{width: '300px', }}>
                 <Input type='text' label='Name' name='name' 
                     value={this.state.name} 
                     onChange={this.handleNameChange.bind(this, 'name')}
@@ -30,9 +33,11 @@ class Login extends Component {
                     onChange={this.handlePasswordChange.bind(this, 'password')} 
                 />
                 <Link to='/login'>
-                    <Button label="register" raised primary />
+                    <Button label="register" raised primary style={{}}/>
                 </Link>
 
+            </Card>
+            </div>
             </div>
         )
     }
