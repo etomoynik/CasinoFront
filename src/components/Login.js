@@ -20,27 +20,27 @@ class Login extends Component {
     };
 
     render() {
-        
+
 
         return (
             <div style={{ flex: 1, padding: '4rem' }}>
             <div style={{maxWidth: 300, margin: 'auto'}}>
             <Card style={{width: '300px'}}>
-                <Input type='text' label='Name' name='name' 
-                    value={this.state.name} 
+                <Input type='text' label='Name' name='name'
+                    value={this.state.name}
                     onChange={this.handleNameChange.bind(this, 'name')}
                 />
-                <Input type='password' label='Password' name='password' 
-                    value={this.state.password} 
+                <Input type='password' label='Password' name='password'
+                    value={this.state.password}
                     onChange={this.handlePasswordChange.bind(this, 'password')}
                 />
                 <Navigation type='horizontal'>
-                    {/* <Link to="/app"> */}
-                    <Link to="/home"><Button label = "Login"  raised primary/></Link>
-                    {/* </Link> */}
-                    {/* <Link to="/register"> */}
-                    <Link to="/register"><Button label = "Register"  raised primary/></Link>
-                    {/* </Link> */}
+                    <Link to="/home">
+                      <Button label = "Login"  raised primary/>
+                    </Link>
+                    <Link to="/register">
+                      <Button label = "Register"  raised primary/>
+                    </Link>
                 </Navigation>
             </Card>
             </div>

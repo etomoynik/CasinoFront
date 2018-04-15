@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       <App>
-        <Card style={{width: '350px'}}>
+        // <Card style={{width: '350px'}}>
           <CardTitle
             avatar="https://placeimg.com/80/80/animals"
             title="Avatar style title"
@@ -38,4 +38,3 @@ class Home extends Component {
 }
 
 export default Home;
-
