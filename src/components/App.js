@@ -10,7 +10,11 @@ import {
     NavDrawer
 } from 'react-toolbox';
 
+import RRLink from './RRLink'
 
+const styleDrawer = {
+    width: "24rem"
+}
 
 class App extends Component {
     state = {
@@ -32,7 +36,7 @@ class App extends Component {
             <Layout>
                 <AppBar title='' leftIcon='menu' onLeftIconClick={this.toggleDrawerActive} fixed={true}>
                     <Navigation type='horizontal'>
-                    <Button label="Logout" raised primary />
+                        <RRLink exact to='/Login' label='Logout'/>
                     </Navigation>
                 </AppBar>
                 <div style={{ flex: 1, padding: '4rem' }}>
@@ -43,15 +47,11 @@ class App extends Component {
                     pinned={this.state.drawerPinned} permanentAt='xxxl'
                     onOverlayClick={ this.toggleDrawerActive }>
                     <Navigation type='vertical'>
-                        <Button label="Home" raised primary />
-                        <RouterLink to="/profile">
-                            <Button label="Profile" raised primary />
-                        </RouterLink>
-                        <Button label="Game" raised primary />
-                        <Button label="About us" raised primary />
-                        <RouterLink to="/machines">
-                            <Button label="Machines" raised primary />
-                        </RouterLink>
+                        <RRLink style={{width: "100%"}} exact to='/home' label='Home'/>
+                        <RRLink exact to='/profile' label='Profile'/>
+                        <RRLink exact to='/game' label='Game'/>
+                        <RRLink exact to='/about' label='About us'/>
+                        <RRLink exact to='/machines' label='Machines'/>
                     </Navigation>
                 </NavDrawer>
 

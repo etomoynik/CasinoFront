@@ -1,41 +1,46 @@
 import React, { Component } from 'react';
 
-import {Input} from 'react-toolbox'
-import {Button} from 'react-toolbox';
-import { Card } from 'react-toolbox';  
+import { Input, Card, Button, Navigation } from 'react-toolbox';  
 
 import { Link } from 'react-router-dom'
 
-class Login extends Component {
-    state = { name: '', password: ''};
+import RRbutton from './RRbutton'
+
+class Register extends Component {
+    state = { name: '', password: '', label: ''};
 
     handleNameChange = (name, value) => {
-        this.setState({name: value});
+        this.setState({...this.state, [name]: value});
     };
 
     handlePasswordChange = (password, value) => {
-        this.setState({password: value});
+        this.setState({...this.state, [password]: value});
     };
 
-
-
     render() {
+        console.log(this.state.name)
         return (
             <div style={{ flex: 1, padding: '4rem' }}>
-            <div style={{maxWidth: 300, margin: 'auto', }}>
-            <Card style={{width: '300px', }}>
-                <Input type='text' label='Name' name='name' 
-                    value={this.state.name} 
-                    onChange={this.handleNameChange.bind(this, 'name')}
-                />
-                <Input type='password' label='Password' name='password' 
-                    value={this.state.password} 
-                    onChange={this.handlePasswordChange.bind(this, 'password')} 
-                />
-                <Link to='/login'>
-                    <Button label="register" raised primary style={{}}/>
-                </Link>
-
+            <div style={{maxWidth: 300, margin: 'auto'}}>
+            <Card style={{width: '300px'}}>
+                <form style={{width: "50%", margin: 'auto'}}>
+                    <Input type='text' hint='login' name='name' autoComplete="off" style={{transitionDuration:'0.2s'}}
+                        value={this.state.name}
+                        onChange={this.handleNameChange.bind(this, 'name')}
+                    />
+                    <Input type='password' hint='password' name='password' autoComplete="off"
+                        value={this.state.password}
+                        onChange={this.handlePasswordChange.bind(this, 'password')}
+                    />
+                </form>
+                
+                <Navigation type='horizontal'>
+                    <RRbutton style={{
+                        width: "100%",
+                        margin: "0 auto"
+                        }}
+                        exact to='/login' label='Register'/>
+                </Navigation>
             </Card>
             </div>
             </div>
@@ -43,4 +48,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default Register

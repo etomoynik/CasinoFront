@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import {ProgressBar} from 'react-toolbox'
 
 
 import {
@@ -82,17 +82,17 @@ class ProfileList extends Component {
         return (
             <App>
                 <div style={styleProfileWrapper}>
-                    {this.state.fetched ? this.state.users.map(user_data =>
+                    {this.state.fetched ? this.state.users.map((user_data, i) =>
                       (<div>
                           <Profile
                               data={user_data}
-                              key={"Profile_"+Math.random()}
+                              key={"Profile_" + i}
                               incrFunc={this.props.increaseAccessLvl}
                               usersState={this.props.users}
                           />
-                      </div>)
-                    ) : <i>Waiting server response</i>}
-                    {this.state.fetched ? this.state.users.map(user_data =>this.props.addUser(user_data)) : (<i></i>)}
+                    </div>)
+                    ) : (<ProgressBar type="circular" mode="indeterminate" />)}
+                    {/* {this.state.fetched ? this.state.users.map(user_data =>this.props.addUser(user_data)) : (<i></i>)} */}
                 </div>
             </App>
         )
