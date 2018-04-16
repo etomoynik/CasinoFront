@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import {Input} from 'react-toolbox'
-import {Button} from 'react-toolbox';
-import {Navigation} from 'react-toolbox';
-import { Card } from 'react-toolbox';
+import {Input, Button, Navigation, Card} from 'react-toolbox'
 
 
 import RRbutton from './RRbutton'
