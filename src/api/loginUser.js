@@ -1,0 +1,1 @@
+export default () => fetch('http://localhost:3000/registered_users');

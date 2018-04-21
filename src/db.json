@@ -1,0 +1,32 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "registered_users": [
+    {
+      "id": 1,
+      "login": "admin",
+      "password": "admin",
+      "access_level": 3
+    },
+    {
+      "id": 2,
+      "login": "employee",
+      "password": "work",
+      "access_level": 2
+    },
+    {
+      "id": 3,
+      "login": "user",
+      "password": "hello",
+      "access_level": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

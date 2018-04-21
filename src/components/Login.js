@@ -1,13 +1,11 @@
+//  NPM IMPORTS
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import {Input, Button, Navigation, Card} from 'react-toolbox'
-
-
+//  INNER IMPORTS
 import RRbutton from './RRbutton'
 
-import qs from 'qs'
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -81,12 +79,11 @@ const mapStateToProps = (state) => {
     return {
       isLoggedIn: state.isLoggedIn
     }
-  }
+  };
   
 const mapDispatchToProps = (dispatch) => {
 return {
     LoginAttempt: (username,  password) => {
-    console.log(username, password)
     fetch('https://jsonplaceholder.typicode.com/posts/1', 
         {headers: {
         "Content-Type": "application/json",
@@ -99,6 +96,6 @@ return {
         }).then(data => dispatch({ type: 'loginAttempt', data: data })).then(data => console.log(data.body))
     }
 }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
