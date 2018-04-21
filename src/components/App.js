@@ -40,7 +40,8 @@ class App extends Component {
                     </Navigation>
                 </AppBar>
                 <div style={{ flex: 1, padding: '4rem' }}>
-                        {this.props.children}
+                        {
+                            this.props.children}
                 </div>
 
                 <NavDrawer active={this.state.drawerActive}

@@ -27,9 +27,11 @@ class Profile extends Component {
     }
     render() {
         const {data} = this.props
+        
+        console.log(data)
         return (
           <Card style={styleProfile}>
-              <h1>{data.name.first + ' ' + data.name.last}</h1>
+              <h1>{data.ЧЕЛОВЕК.name + data.ЧЕЛОВЕК.lastname} has salary of { data.salary}</h1>
               <h3><i>Access level = </i>{this.state.access_level}</h3>
               <Button
                 onClick={() => {
@@ -65,9 +67,8 @@ class ProfileList extends Component {
     }
 
     fetchUsers() {
-        fetch('https://randomuser.me/api/?results=20')
+        fetch('http://localhost:8079/employee/')
             .then(response => response.json())
-            .then(data => data.results)
             .then(arrayOfResults => this.setState({
                 users: arrayOfResults,
                 fetched: true,
