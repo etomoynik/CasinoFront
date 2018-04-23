@@ -17,14 +17,14 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.LoginAttempt = this.props.LoginAttempt;
-        this.state={
+        this.state = {
             username: '',
             password: '',
             cookie: '',
             label: '',
             isLoggedIn: this.props.isLoggedIn,
         }
-    }
+    };
 
     handleNameChange = (username, value) => {
         this.setState({...this.state, [username]: value});
@@ -39,7 +39,7 @@ class Login extends Component {
 
 
     render() {
-        if (this.state.isLoggedIn === true) {
+        if (this.state.isLoggedIn == true) {
             return <Redirect to='/home' />
         }
         return (
